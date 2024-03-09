@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 style="text-align: center; font-weight: bold; text-transform: uppercase;">Mặc cái quần</h1>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <label>FirstName</label>
+                        <input [formControl]="firstName"  class="form-control" type="text"  />
+                        <div class="mt-2 errorNotification">
+                            <span *ngIf="firstName.dirty && !!firstName?.errors?.required">Firstname is required</span>
+                            <span *ngIf="firstName.dirty && !!firstName?.errors?.minlength?.requiredLength">Minlength is {{firstName.errors.minlength.requiredLength}}</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <label>Lastname</label>
+                        <input class="form-control" type="text" [formControl]="lastName" />
+                        <div class="mt-2 errorNotification">
+                            <span *ngIf="lastName.dirty && !!lastName?.errors?.required">Lastname is required</span>
+                            <span *ngIf="lastName.dirty && !!lastName?.errors?.minlength?.requiredLength">Minlength is {{lastName.errors.minlength.requiredLength}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <label>Phone number</label>
+                        <input class="form-control" type="phone" />
+                        <div class="mt-2 errorNotification"></div>
+                    </div>
+                    <div class="col-6">
+                        <label>Nickname</label>
+                        <input class="form-control" type="text" [formControl]="nickName" />
+                        <div class="mt-2 errorNotification">
+                            <span *ngIf="nickName.dirty && !!nickName?.errors?.required">Nickname is required</span>
+                            <span *ngIf="nickName.dirty && !!nickName?.errors?.minlength?.requiredLength">Minlength is {{nickName.errors.minlength.requiredLength}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button
+                            class="btn btn-primary"
+                            type="submit"
+                            [disabled]="myForm.invalid"
+                        >Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-2">
+            <div>Firstname valid: {{firstName.valid}}</div>
+            <div>Lastname valid: {{lastName.valid}}</div>
+            <div>Phone number valid: {{phoneNumber.valid}}</div>
+            <div>Nickname valid: {{nickName.valid}}</div>
+            <div>Our form valid: {{myForm.valid}}</div>
+            <div>Our form dirty: {{myForm.dirty}}</div>
+        </div>
+    </div>
+</div>

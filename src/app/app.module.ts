@@ -11,6 +11,7 @@ import { LearningFormComponent } from './learning-form/learning-form.component';
 import { DemoFormComponent } from './demo-form/demo-form.component';
 import { MaccaiquanComponent } from './maccaiquan/maccaiquan.component';
 import { Maccaiquan2Component } from './maccaiquan2/maccaiquan2.component';
+import { MyFormComponent } from './my-form/my-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { Maccaiquan2Component } from './maccaiquan2/maccaiquan2.component';
     LearningFormComponent,
     DemoFormComponent,
     MaccaiquanComponent,
-    Maccaiquan2Component
+    Maccaiquan2Component,
+    MyFormComponent
   ],
   imports: [
     BrowserModule,
