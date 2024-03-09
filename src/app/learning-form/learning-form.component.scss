@@ -1,0 +1,16 @@
+.remove-icon {
+    position: relative;
+    padding: 5px 5px;
+    border-radius: 0px;
+}
+
+.remove-icon::-webkit-calendar-picker-indicator {
+    display: block;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: transparent;
+    cursor: pointer;
+}

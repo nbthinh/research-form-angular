@@ -1,0 +1,16 @@
+<hello name="{{name}}"></hello>
+<br/>
+<input [ngModel]="name" (ngModelChange)="name=$event" />
+<br/>
+<!-- <app-toggle #toggleComp [(checked)]="isChecked"></app-toggle> -->
+<app-toggle [(checked)]="isChecked"></app-toggle>
+
+<!-- <button #toggleButton (click)="toggleComp.toggle()">Toggle me</button> -->
+<button #toggleButton (click)="maccaiquan.toggle()">Toggle me</button>
+
+<!-- <app-learning-form></app-learning-form> -->
+<hr/>
+<!-- <app-maccaiquan></app-maccaiquan> -->
+<hr />
+<hr />
+<app-maccaiquan2></app-maccaiquan2>

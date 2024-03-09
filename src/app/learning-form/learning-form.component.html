@@ -1,0 +1,27 @@
+<hr/>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" [formControl]="firstName">
+  
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" [formControl]="lastName">
+    <input class="remove-icon" type="time" />
+    <input class="remove-icon" type="time" />
+    <p>Complete the form to enable button.</p>
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  </form>
+  {{firstName.valid}}
+
+  <br/>
+  Mặc cái quần
+  <br/>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        Hello world
+      </div>
+      <div class="col-6">Mặc cái quần</div>
+    </div>
+  </div>

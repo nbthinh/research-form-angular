@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 style="text-align: center;">Mặc cái quần</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p>Task: Tạo một FormGroup quản lý một Form thông tin bảng điểm học sinh và render lên template</p>
+            <p>Thông tin form bao gồm:</p>
+            <p>Id, Họ tên, Số điện thoại, Danh sách cột điểm các môn, mỗi môn sẽ có điểm 15 phút, 1 tiết, cuối kỳ</p>
+        </div>
+    </div>
+    <hr/>
+    
+    <form [formGroup]="infoManager">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label >Họ và tên</label>
+                    <input
+                        [disabled]="isDisable.value"
+                        [value]="name.value"
+                        (keydown)="handleTypeName($event)"
+                        type="text" class="form-control" aria-describedby="emailHelp" placeholder="Nhập họ và tên"
+                    >
+                    <span>Required name:</span> <input type="checkbox" [formControl]="isRequired" />
+                    <span>Disable name:</span> <input type="checkbox" [formControl]="isDisable" />
+
+
+                    <br/>
+                    isDirty: {{name.dirty}}
+
+                    <button (click)="learningFormControl()">Learning</button>
+                </div>
+                <div class="form-group">
+                    <label >Số điện thoại</label>
+                    <input
+                        [formControl]="phone"
+                        type="text" class="form-control" aria-describedby="emailHelp" placeholder="Nhập số điện thoại"
+                    >
+                </div>
+            </div>
+            <div class="col-6">
+                <!-- <button class="btn btn-outline-success" (click)="kiemtraFormArray()">Kiểm tra form array</button>
+                <div *ngFor="let scoreObj of scoreList.controls; let i = index">
+                    <div *ngIf="scoreObj.value != null">
+                        <div>
+                            {{ scoreObj.value.subject}} - {{scoreObj.value.score}} điểm - 
+                            <input [formControl]="scoreObj.value.score" />
+                            <button (click)="handleDeleteSubject(i)" >Xoá môn học</button> - 
+                        </div>
+                    </div>
+                </div>
+                <button (click)="kiemtra()">Kiểm tra</button> -->
+            </div>
+        </div>
+    </form>
+
+    <div class="row">
+        <div class="col-12">
+            <button (click)="kiemtraabc()">Check abx</button>
+            <div *ngFor="let each of abc.controls; let i = index">
+
+                <input type="text" [formControl]="each" />
+            </div>
+        </div>
+    </div>
+</div>
