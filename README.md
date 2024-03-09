@@ -1,5 +1,15 @@
 # Cách làm một form cơ bản có validate (Repo: research-form-angular)
 
+---
+**GHI CHÚ QUAN TRỌNG**
+
+- Để thêm validator cho formControl, ta dùng `addValidators` hoặc `setValidators`
+- Để xoá validator cho formControl, tạm thời cứ dùng:  `removeValidators`
+- Mỗi lần dùng `addValidators` hay `removeValidators`, ta cần gọi: `updateValueAndValidity` để update lại trạng thái và giá trị của `formControl` (Ví dụ trạng thái có valid hay chưa)
+- Ta ràng buộc `disabled` vào nút submit để nếu form chưa phù hợp thì chặn valid
+
+---
+
 - HTML
 ```
 <div class="row">
