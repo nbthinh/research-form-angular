@@ -91,3 +91,11 @@ export class Maccaiquan2Component {
 }
 
 ```
+
+
+- Cách dùng setErrors:
+```
+this.agree.setErrors({
+  mustAgree: "You must agree with our regulation to create account"
+});
+```

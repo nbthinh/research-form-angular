@@ -43,6 +43,16 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
+                        <input type="checkbox" [formControl]="agree" />
+                        <span style="margin-left: 5px;">Bạn có đồng ý với điều khoản của chúng tôi không?</span>
+                    </div>
+                    <div class="mt-2 errorNotification">
+                        <span *ngIf="!!agree?.errors?.mustAgree">{{agree.errors.mustAgree}}</span>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-12">
                         <button
                             class="btn btn-primary"
                             type="submit"
